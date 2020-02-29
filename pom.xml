@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
 
   <name>spring-dev-parent</name>
-  <description>parent of other projects</description>
+  <description>用于版本控制，除eureka项目，其他项目都以此为parent</description>
 
   <modules>
     <module>dev-core</module>
@@ -27,6 +27,7 @@
     <mybatis.spring.version>1.1.1</mybatis.spring.version>
     <fastjson.version>1.2.44</fastjson.version>
     <lombok.version>1.16.18</lombok.version>
+    <mysql.driver.version>5.1.44</mysql.driver.version>
   </properties>
 
   <dependencyManagement>
@@ -46,11 +47,6 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka</artifactId>
       </dependency>
 
       <dependency>
@@ -81,6 +77,12 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.driver.version}</version>
       </dependency>
 
     </dependencies>
