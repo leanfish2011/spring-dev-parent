@@ -1,4 +1,4 @@
-package tim.message;
+package com.tim.message;
 
 public class MainCode {
 
