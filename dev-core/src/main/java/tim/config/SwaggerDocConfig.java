@@ -1,4 +1,4 @@
-package com.tim.config;
+package tim.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
