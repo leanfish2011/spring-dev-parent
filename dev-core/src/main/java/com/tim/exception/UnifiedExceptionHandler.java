@@ -26,11 +26,11 @@ public class UnifiedExceptionHandler {
   }
 
   /**
-   * 拦截捕捉自定义异常 IshouException.class
+   * 拦截捕捉自定义异常 CommonException.class
    */
   @ResponseBody
-  @ExceptionHandler(IshouException.class)
-  public Message myErrorHandler(IshouException ex) {
+  @ExceptionHandler(CommonException.class)
+  public Message myErrorHandler(CommonException ex) {
     log.error("发生业务异常：{}", ex.getMessage());
     return Message.error(ex.getMessage());
   }

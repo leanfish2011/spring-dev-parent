@@ -5,9 +5,9 @@ package com.tim.exception;
  * @date：20-3-7 下午9:59
  * @description： 系统所有自定义异常父类，用于统一异常处理
  */
-public abstract class IshouException extends RuntimeException {
+public abstract class CommonException extends RuntimeException {
 
-  public IshouException(String msg) {
+  public CommonException(String msg) {
     super(msg);
   }
 }
