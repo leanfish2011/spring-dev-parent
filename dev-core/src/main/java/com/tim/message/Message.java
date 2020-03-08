@@ -26,6 +26,9 @@ public class Message<T> {
    */
   private T data;
 
+  public Message() {
+  }
+
   public Message(Integer code, String msg) {
     this.code = code;
     this.msg = msg;

@@ -21,7 +21,7 @@ public class UnifiedExceptionHandler {
   @ResponseBody
   @ExceptionHandler(Exception.class)
   public Message runTimeExceptionHandler(Exception ex) {
-    log.error("内部异常：{}", ex.getMessage());
+    log.error("系统异常：{}", ex.getMessage());
     return Message.error(ex.getMessage());
   }
 
