@@ -29,6 +29,7 @@
     <lombok.version>1.16.18</lombok.version>
     <mysql.driver.version>5.1.44</mysql.driver.version>
     <spring-boot-maven.version>1.5.8.RELEASE</spring-boot-maven.version>
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -88,5 +89,27 @@
 
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot-maven.version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
 
 </project>
