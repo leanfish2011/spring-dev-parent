@@ -1,4 +1,4 @@
-package com.tim.exception;
+package com.tim.exception.type;
 
 /**
  * @author：tim

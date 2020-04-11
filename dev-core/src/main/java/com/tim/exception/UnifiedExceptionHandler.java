@@ -1,5 +1,6 @@
 package com.tim.exception;
 
+import com.tim.exception.type.CommonException;
 import com.tim.message.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
