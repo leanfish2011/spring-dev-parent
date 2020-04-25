@@ -1,4 +1,4 @@
-package tim.message;
+package com.tim.message;
 
 import lombok.Data;
 
@@ -25,6 +25,9 @@ public class Message<T> {
    * 消息体
    */
   private T data;
+
+  public Message() {
+  }
 
   public Message(Integer code, String msg) {
     this.code = code;
