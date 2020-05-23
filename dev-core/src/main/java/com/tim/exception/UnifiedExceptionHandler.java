@@ -23,7 +23,7 @@ public class UnifiedExceptionHandler {
   @ExceptionHandler(Exception.class)
   public Message runTimeExceptionHandler(Exception ex) {
     log.error("系统异常：", ex);
-    return Message.error("发生异常：" + ex.getMessage());
+    return Message.error("系统异常");
   }
 
   /**
@@ -33,6 +33,6 @@ public class UnifiedExceptionHandler {
   @ExceptionHandler(CommonException.class)
   public Message myErrorHandler(CommonException ex) {
     log.error("业务异常：", ex);
-    return Message.error("发生异常：" + ex.getMessage());
+    return Message.error("系统异常");
   }
 }
