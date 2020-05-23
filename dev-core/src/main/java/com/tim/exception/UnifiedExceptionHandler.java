@@ -22,8 +22,8 @@ public class UnifiedExceptionHandler {
   @ResponseBody
   @ExceptionHandler(Exception.class)
   public Message runTimeExceptionHandler(Exception ex) {
-    log.error("系统异常：{}", ex.getMessage());
-    return Message.error(ex.getMessage());
+    log.error("系统异常：", ex);
+    return Message.error("发生异常：" + ex.getMessage());
   }
 
   /**
@@ -32,7 +32,7 @@ public class UnifiedExceptionHandler {
   @ResponseBody
   @ExceptionHandler(CommonException.class)
   public Message myErrorHandler(CommonException ex) {
-    log.error("业务异常：{}", ex.getMessage());
-    return Message.error(ex.getMessage());
+    log.error("业务异常：", ex);
+    return Message.error("发生异常：" + ex.getMessage());
   }
 }
