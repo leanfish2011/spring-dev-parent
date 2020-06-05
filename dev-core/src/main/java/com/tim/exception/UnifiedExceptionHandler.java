@@ -32,7 +32,6 @@ public class UnifiedExceptionHandler {
   @ResponseBody
   @ExceptionHandler(CommonException.class)
   public Message myErrorHandler(CommonException ex) {
-    log.error("业务异常：", ex);
-    return Message.error("系统异常");
+    return Message.error(ex.getMessage());
   }
 }
