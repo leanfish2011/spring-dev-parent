@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ResponseUtil {
 
+  /**
+   * 将message输出
+   *
+   * @param response 返回对象
+   * @param message 消息
+   */
   public static void responseOutWithJson(HttpServletResponse response, Message message) {
     response.setCharacterEncoding("UTF-8");
     response.setContentType("application/json; charset=utf-8");
