@@ -3,6 +3,7 @@ package com.tim.exception;
 import com.tim.exception.type.CommonException;
 import com.tim.message.Message;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,5 +34,15 @@ public class UnifiedExceptionHandler {
   @ExceptionHandler(CommonException.class)
   public Message bizExceptionHandler(CommonException ex) {
     return Message.error(ex.getMessage());
+  }
+
+  /**
+   * 拦截输入参数校验异常。输入参数字段上注解，并且控制器有@valid，返回注解上的message
+   */
+  @ResponseBody
+  @ExceptionHandler(BindException.class)
+  public Message validExceptionHandler(BindException ex) {
+    log.error("参数校验异常：" + ex);
+    return Message.error(ex.getFieldError().getDefaultMessage());
   }
 }
