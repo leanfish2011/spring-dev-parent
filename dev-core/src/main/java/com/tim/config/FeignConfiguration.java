@@ -22,7 +22,14 @@ public class FeignConfiguration implements RequestInterceptor {
   public void apply(RequestTemplate requestTemplate) {
     ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
         .getRequestAttributes();
+    if (attributes == null) {
+      return;
+    }
     HttpServletRequest request = attributes.getRequest();
+    if (request == null) {
+      return;
+    }
+
     Enumeration<String> headerNames = request.getHeaderNames();
     if (headerNames != null) {
       while (headerNames.hasMoreElements()) {
