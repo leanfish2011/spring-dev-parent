@@ -17,6 +17,11 @@ import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @author：tim
+ * @date：21-8-7 下午17:17
+ * @description：swagger文档配置
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerDocConfig {
@@ -56,10 +61,16 @@ public class SwaggerDocConfig {
         .securityContexts(securityContexts());
   }
 
+  /**
+   * 加入文档标题和版本
+   */
   private ApiInfo apiInfo() {
     return new ApiInfoBuilder().title(swaggerTitle).version(swaggerVersion).build();
   }
 
+  /**
+   * 加入auth认证
+   */
   private List<ApiKey> securitySchemes() {
     List apiKeys = new ArrayList<ApiKey>(1);
     apiKeys.add(new ApiKey("Authorization", "Authorization", "header"));
@@ -67,6 +78,9 @@ public class SwaggerDocConfig {
     return apiKeys;
   }
 
+  /**
+   * 需要认证的接口
+   */
   private List<SecurityContext> securityContexts() {
     List securityContexts = new ArrayList<SecurityContext>(1);
     securityContexts.add(SecurityContext.builder()
@@ -77,6 +91,9 @@ public class SwaggerDocConfig {
     return securityContexts;
   }
 
+  /**
+   * 获取认证
+   */
   private List<SecurityReference> defaultAuth() {
     AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
     AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
