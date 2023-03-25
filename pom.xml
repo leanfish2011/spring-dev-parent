@@ -24,7 +24,7 @@
     <spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
     <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
     <mybatis.spring.version>1.1.1</mybatis.spring.version>
-    <fastjson.version>1.2.44</fastjson.version>
+    <fastjson.version>1.2.83</fastjson.version>
     <mysql.driver.version>8.0.16</mysql.driver.version>
     <lombok.version>1.18.24</lombok.version>
     <spring-boot-maven.version>1.5.8.RELEASE</spring-boot-maven.version>
