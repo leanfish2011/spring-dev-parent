@@ -11,13 +11,13 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 /**
  * @author：tim
  * @date：20-3-8 下午12:40
- * @description：
+ * @description：FeignClient配置类
  */
 @Configuration
 public class FeignConfiguration implements RequestInterceptor {
 
   /**
-   * header信息加入到feignclient
+   * 原http请求中header信息加入到feignclient，携带原信息访问其他服务接口
    */
   public void apply(RequestTemplate requestTemplate) {
     ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
